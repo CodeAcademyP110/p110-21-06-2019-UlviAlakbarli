@@ -1,0 +1,16 @@
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\GaranuMotorsWithEF.exe.config
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\GaranuMotorsWithEF.exe
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\GaranuMotorsWithEF.pdb
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\EntityFramework.dll
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\EntityFramework.xml
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.csprojAssemblyReference.cache
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.Form1.resources
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.Properties.Resources.resources
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.csproj.GenerateResource.cache
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.csproj.CoreCompileInputs.cache
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.csproj.CopyComplete
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.exe
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.pdb
+C:\Users\Ulvi\source\repos\GaranuMotorsWithEF\GaranuMotorsWithEF\obj\Debug\GaranuMotorsWithEF.AddNewCar.resources

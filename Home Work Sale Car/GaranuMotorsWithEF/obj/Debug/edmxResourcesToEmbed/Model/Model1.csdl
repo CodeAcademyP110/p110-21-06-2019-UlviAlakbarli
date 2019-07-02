@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GaranuyMotorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Models" Relationship="Self.FK__Model__BrandId__3F466844" FromRole="Brand" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FuelId" Type="Int32" Nullable="false" />
+    <Property Name="EngineVolume" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="TransmissionId" Type="Int32" Nullable="false" />
+    <Property Name="ColorId" Type="Int32" Nullable="false" />
+    <Property Name="Distance" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="ModelId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Color" Relationship="Self.FK__Cars__ColorId__5535A963" FromRole="Cars" ToRole="Color" />
+    <NavigationProperty Name="FuelType" Relationship="Self.FK__Cars__FuelId__534D60F1" FromRole="Cars" ToRole="FuelType" />
+    <NavigationProperty Name="Model" Relationship="Self.FK__Cars__ModelId__5629CD9C" FromRole="Cars" ToRole="Model" />
+    <NavigationProperty Name="Transmission" Relationship="Self.FK__Cars__Transmissi__5441852A" FromRole="Cars" ToRole="Transmission" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK__Cars__ColorId__5535A963" FromRole="Color" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="FuelType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK__Cars__FuelId__534D60F1" FromRole="FuelType" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BrandId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK__Model__BrandId__3F466844" FromRole="Model" ToRole="Brand" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK__Cars__ModelId__5629CD9C" FromRole="Model" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Transmission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK__Cars__Transmissi__5441852A" FromRole="Transmission" ToRole="Cars" />
+  </EntityType>
+  <Association Name="FK__Model__BrandId__3F466844">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cars__ColorId__5535A963">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cars__FuelId__534D60F1">
+    <End Role="FuelType" Type="Self.FuelType" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FuelType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="FuelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cars__ModelId__5629CD9C">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="ModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cars__Transmissi__5441852A">
+    <End Role="Transmission" Type="Self.Transmission" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transmission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="TransmissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GaranuyMotorsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <EntitySet Name="Colors" EntityType="Self.Color" />
+    <EntitySet Name="FuelTypes" EntityType="Self.FuelType" />
+    <EntitySet Name="Models" EntityType="Self.Model" />
+    <EntitySet Name="Transmissions" EntityType="Self.Transmission" />
+    <AssociationSet Name="FK__Model__BrandId__3F466844" Association="Self.FK__Model__BrandId__3F466844">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Model" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cars__ColorId__5535A963" Association="Self.FK__Cars__ColorId__5535A963">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cars__FuelId__534D60F1" Association="Self.FK__Cars__FuelId__534D60F1">
+      <End Role="FuelType" EntitySet="FuelTypes" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cars__ModelId__5629CD9C" Association="Self.FK__Cars__ModelId__5629CD9C">
+      <End Role="Model" EntitySet="Models" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cars__Transmissi__5441852A" Association="Self.FK__Cars__Transmissi__5441852A">
+      <End Role="Transmission" EntitySet="Transmissions" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
